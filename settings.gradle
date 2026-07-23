@@ -1,0 +1,3 @@
+rootProject.name = 'NetTV Player'
+
+include 'app'

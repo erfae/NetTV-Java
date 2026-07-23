@@ -1,0 +1,54 @@
+package kotlinx.coroutines.flow.internal;
+
+import kotlin.Metadata;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlinx.coroutines.Job;
+
+/* JADX INFO: compiled from: Merge.kt */
+/* JADX INFO: loaded from: classes2.dex */
+@Metadata(k = 3, mv = {1, 6, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1", f = "Merge.kt", i = {0, 0}, l = {30}, m = "emit", n = {"this", "value"}, s = {"L$0", "L$1"})
+public final class ChannelFlowTransformLatest$flowCollect$3$1$emit$1 extends ContinuationImpl {
+    public Object L$0;
+    public Object L$1;
+    public Job L$2;
+    public int label;
+    public /* synthetic */ Object result;
+    public final /* synthetic */ ChannelFlowTransformLatest.AnonymousClass3.AnonymousClass1<T> this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public ChannelFlowTransformLatest$flowCollect$3$1$emit$1(ChannelFlowTransformLatest.AnonymousClass3.AnonymousClass1<? super T> anonymousClass1, Continuation<? super ChannelFlowTransformLatest$flowCollect$3$1$emit$1> continuation) {
+        super(continuation);
+        this.this$0 = anonymousClass1;
+    }
+
+    /* JADX WARN: Type inference incomplete: some casts might be missing */
+    /*  JADX ERROR: JadxRuntimeException in pass: ModVisitor
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't change immutable type kotlin.coroutines.Continuation to kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$emit$1 for r1v1 'this'  kotlin.coroutines.Continuation
+        	at jadx.core.dex.instructions.args.SSAVar.setType(SSAVar.java:114)
+        	at jadx.core.dex.instructions.args.RegisterArg.setType(RegisterArg.java:52)
+        	at jadx.core.dex.visitors.ModVisitor.removeCheckCast(ModVisitor.java:417)
+        	at jadx.core.dex.visitors.ModVisitor.replaceStep(ModVisitor.java:152)
+        	at jadx.core.dex.visitors.ModVisitor.visit(ModVisitor.java:96)
+        */
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @org.jetbrains.annotations.Nullable
+    public final java.lang.Object invokeSuspend(@org.jetbrains.annotations.NotNull java.lang.Object r2) {
+        /*
+            r1 = this;
+            r1.result = r2
+            int r2 = r1.label
+            r0 = -2147483648(0xffffffff80000000, float:-0.0)
+            r2 = r2 | r0
+            r1.label = r2
+            kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1<T> r2 = r1.this$0
+            r0 = 0
+            java.lang.Object r2 = r2.emit(r0, r1)
+            return r2
+        */
+        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$emit$1.invokeSuspend(java.lang.Object):java.lang.Object");
+    }
+}

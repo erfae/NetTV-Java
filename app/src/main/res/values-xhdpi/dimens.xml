@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="epg_text_size">@dimen/_10sdp</dimen>
+    <dimen name="home_text_size">@dimen/_11sdp</dimen>
+    <dimen name="item_number_size">@dimen/_7sdp</dimen>
+    <dimen name="item_season_height">@dimen/_100sdp</dimen>
+    <dimen name="item_season_image_height">@dimen/_80sdp</dimen>
+    <dimen name="item_season_width">@dimen/_60sdp</dimen>
+    <dimen name="item_text_size">@dimen/_8sdp</dimen>
+    <dimen name="item_vod_height">@dimen/_110sdp</dimen>
+    <dimen name="item_vod_image_height">@dimen/_90sdp</dimen>
+    <dimen name="item_vod_width">@dimen/_70sdp</dimen>
+</resources>

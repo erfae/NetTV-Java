@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_lay"
+    android:padding="2sp"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="@dimen/_70sdp"
+    android:layout_height="match_parent"
+    android:scaleX="0.95"
+    android:scaleY="0.95">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_vod"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:cornerRadius="@dimen/_2sdp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="@dimen/_7sdp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:id="@+id/txt_name"
+        android:background="@drawable/item_vod_bottom"
+        android:padding="@dimen/_2sdp"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:fontFamily="@font/roboto_light_aw3r"
+        android:backgroundTint="@color/black_80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

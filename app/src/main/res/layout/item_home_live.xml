@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/search_item_bg"
+    android:padding="1.5sp"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="@dimen/_80sdp"
+    android:layout_height="@dimen/_60sdp"
+    android:layout_marginStart="@dimen/_3sdp">
+    <ImageView
+        android:id="@+id/image_bg"
+        android:background="#25ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_name"/>
+    <ImageView
+        android:id="@+id/image_channel"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_3sdp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_3sdp"
+        android:src="@drawable/icon_live"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="@dimen/item_number_size"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:id="@+id/txt_name"
+        android:background="@drawable/search_bottom_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:text="Channel Name"
+        android:singleLine="true"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_channel"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

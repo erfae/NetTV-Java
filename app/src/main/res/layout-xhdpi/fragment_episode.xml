@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/black_gradient_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:background="@drawable/circle_bg"
+        android:padding="@dimen/_3sdp"
+        android:nextFocusLeft="@+id/btn_close"
+        android:nextFocusRight="@+id/btn_close"
+        android:nextFocusUp="@+id/btn_close"
+        android:nextFocusDown="@+id/txt_see_all"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_margin="@dimen/_15sdp"
+        android:src="@drawable/close"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_episodes"
+        android:nextFocusUp="@+id/txt_see_all"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/gray"
+        android:id="@+id/str_episodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:textAllCaps="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_episodes"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/gray"
+        android:id="@+id/txt_see_all"
+        android:background="@drawable/txt_button_bg"
+        android:nextFocusLeft="@+id/txt_see_all"
+        android:nextFocusRight="@+id/txt_see_all"
+        android:nextFocusUp="@+id/btn_close"
+        android:nextFocusDown="@+id/recycler_episodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="see all"
+        android:textAllCaps="true"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/str_episodes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/str_episodes"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

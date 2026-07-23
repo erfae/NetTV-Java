@@ -1,0 +1,103 @@
+package com.google.common.collect;
+
+import com.google.common.annotations.GwtCompatible;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.NavigableSet;
+import java.util.Set;
+import javax.annotation.CheckForNull;
+
+/* JADX INFO: loaded from: classes2.dex */
+@GwtCompatible(emulated = true)
+@ElementTypesAreNonnullByDefault
+final class UnmodifiableSortedMultiset<E> extends Multisets.UnmodifiableMultiset<E> implements SortedMultiset<E> {
+    private static final long serialVersionUID = 0;
+
+    @CheckForNull
+    private transient UnmodifiableSortedMultiset<E> descendingMultiset;
+
+    public UnmodifiableSortedMultiset(SortedMultiset<E> sortedMultiset) {
+        super(sortedMultiset);
+    }
+
+    @Override // com.google.common.collect.SortedMultiset, com.google.common.collect.SortedIterable
+    public Comparator<? super E> comparator() {
+        return ((SortedMultiset) this.delegate).comparator();
+    }
+
+    @Override // com.google.common.collect.Multisets.UnmodifiableMultiset
+    public final Set createElementSet() {
+        return Sets.unmodifiableNavigableSet(((SortedMultiset) this.delegate).elementSet());
+    }
+
+    @Override // com.google.common.collect.Multisets.UnmodifiableMultiset, com.google.common.collect.ForwardingMultiset, com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
+    public final Multiset delegate() {
+        return (SortedMultiset) this.delegate;
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    public SortedMultiset<E> descendingMultiset() {
+        UnmodifiableSortedMultiset<E> unmodifiableSortedMultiset = this.descendingMultiset;
+        if (unmodifiableSortedMultiset != null) {
+            return unmodifiableSortedMultiset;
+        }
+        UnmodifiableSortedMultiset<E> unmodifiableSortedMultiset2 = new UnmodifiableSortedMultiset<>(((SortedMultiset) this.delegate).descendingMultiset());
+        unmodifiableSortedMultiset2.descendingMultiset = this;
+        this.descendingMultiset = unmodifiableSortedMultiset2;
+        return unmodifiableSortedMultiset2;
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    @CheckForNull
+    public Multiset.Entry<E> firstEntry() {
+        return ((SortedMultiset) this.delegate).firstEntry();
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    public SortedMultiset<E> headMultiset(@ParametricNullness E e, BoundType boundType) {
+        return Multisets.unmodifiableSortedMultiset(((SortedMultiset) this.delegate).headMultiset(e, boundType));
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    @CheckForNull
+    public Multiset.Entry<E> lastEntry() {
+        return ((SortedMultiset) this.delegate).lastEntry();
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    @CheckForNull
+    public Multiset.Entry<E> pollFirstEntry() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    @CheckForNull
+    public Multiset.Entry<E> pollLastEntry() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    public SortedMultiset<E> subMultiset(@ParametricNullness E e, BoundType boundType, @ParametricNullness E e2, BoundType boundType2) {
+        return Multisets.unmodifiableSortedMultiset(((SortedMultiset) this.delegate).subMultiset(e, boundType, e2, boundType2));
+    }
+
+    @Override // com.google.common.collect.SortedMultiset
+    public SortedMultiset<E> tailMultiset(@ParametricNullness E e, BoundType boundType) {
+        return Multisets.unmodifiableSortedMultiset(((SortedMultiset) this.delegate).tailMultiset(e, boundType));
+    }
+
+    @Override // com.google.common.collect.Multisets.UnmodifiableMultiset, com.google.common.collect.ForwardingMultiset, com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
+    public final Object delegate() {
+        return (SortedMultiset) this.delegate;
+    }
+
+    @Override // com.google.common.collect.Multisets.UnmodifiableMultiset, com.google.common.collect.ForwardingMultiset, com.google.common.collect.Multiset
+    public NavigableSet<E> elementSet() {
+        return (NavigableSet) super.elementSet();
+    }
+
+    @Override // com.google.common.collect.Multisets.UnmodifiableMultiset, com.google.common.collect.ForwardingMultiset, com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
+    public final Collection delegate() {
+        return (SortedMultiset) this.delegate;
+    }
+}

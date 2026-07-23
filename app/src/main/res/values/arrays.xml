@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>Normal</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </array>
+    <array name="subtitle_background_colors">
+        <item>#00ffffff</item>
+        <item>#80FFFFFF</item>
+        <item>#80808080</item>
+        <item>#80000000</item>
+        <item>#800000FF</item>
+        <item>#800096ff</item>
+        <item>#8049F436</item>
+        <item>#80008000</item>
+        <item>#80FFEB3B</item>
+        <item>#808B8000</item>
+        <item>#80FF0000</item>
+        <item>#808B0000</item>
+        <item>#80A52A2A</item>
+        <item>#805C4033</item>
+        <item>#80C4A484</item>
+    </array>
+    <array name="subtitle_colors">
+        <item>#ffffff</item>
+        <item>#808080</item>
+        <item>#000000</item>
+        <item>#0000FF</item>
+        <item>#0096ff</item>
+        <item>#49F436</item>
+        <item>#008000</item>
+        <item>#FFEB3B</item>
+        <item>#8B8000</item>
+        <item>#FF0000</item>
+        <item>#8B0000</item>
+        <item>#A52A2A</item>
+        <item>#5C4033</item>
+        <item>#C4A484</item>
+    </array>
+</resources>
