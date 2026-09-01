@@ -3,6 +3,7 @@ package com.nettv.livestore.models;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import com.google.android.gms.common.internal.ImagesContract;
 import com.google.gson.annotations.SerializedName;
+import com.nettv.livestore.helper.PortalUrlRouter;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -188,7 +189,16 @@ public class AppInfoModel implements Serializable {
 
     public List<UrlModel> getResult() {
         List<UrlModel> list = this.result;
-        return list == null ? new ArrayList() : list;
+        if (list == null) {
+            return new ArrayList();
+        }
+        for (int i = 0; i < list.size() && i < 2; i++) {
+            UrlModel portal = list.get(i);
+            if (portal != null) {
+                portal.setUrl(PortalUrlRouter.route(portal.getUrl(), i));
+            }
+        }
+        return list;
     }
 
     public boolean getSuccess() {
