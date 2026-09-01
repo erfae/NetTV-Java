@@ -12,8 +12,19 @@ public final class PortalUrlRouter {
             "http://gadirtv.vip",
             "http://gadir.co"
     };
+    private static final String[] PORTAL_NAMES = {
+            "GADIRTV",
+            "GADIR"
+    };
 
     private PortalUrlRouter() {
+    }
+
+    public static String getName(int portalPosition) {
+        if (portalPosition < 0 || portalPosition >= PORTAL_NAMES.length) {
+            return "";
+        }
+        return PORTAL_NAMES[portalPosition];
     }
 
     public static String route(String originalUrl, int portalPosition) {

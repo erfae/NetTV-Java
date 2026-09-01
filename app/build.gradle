@@ -11,8 +11,8 @@ android {
         minSdkVersion 21
         //noinspection ExpiringTargetSdkVersion,ExpiredTargetSdkVersion
         targetSdkVersion 33
-        versionCode 40
-        versionName "3.8"
+        versionCode 41
+        versionName "3.8.1"
         useLibrary 'org.apache.http.legacy'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
