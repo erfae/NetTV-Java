@@ -9,12 +9,12 @@ import java.net.URI;
  */
 public final class PortalUrlRouter {
     private static final String[] PORTAL_BASE_URLS = {
-            "http://derektv.vip:80",
-            "http://gadir.co"
+            "http://derekovhnetapp01.xyz:80",
+            "http://derektv.vip:80"
     };
     private static final String[] PORTAL_NAMES = {
-            "DEREKTV",
-            "GADIR"
+            "DEREK",
+            "DEREKTV"
     };
 
     private PortalUrlRouter() {
