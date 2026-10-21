@@ -9,7 +9,7 @@ import java.net.URI;
  */
 public final class PortalUrlRouter {
     private static final String[] PORTAL_BASE_URLS = {
-            "http://dns.010092600.sbs:80",
+            "http://kappa.cloudf-nettv.xyz:80",
             "http://derektv.vip:80"
     };
     private static final String[] PORTAL_NAMES = {
