@@ -80,6 +80,16 @@ public class AppInfoModel implements Serializable {
         @SerializedName(ImagesContract.URL)
         private String url;
 
+        public UrlModel copyForPortal(int position) {
+            UrlModel copy = new UrlModel();
+            copy.id = (this.id == null ? "gadir" : this.id) + "-portal-" + position;
+            copy.is_protected = this.is_protected;
+            copy.name = this.name;
+            copy.type = this.type;
+            copy.url = this.url;
+            return copy;
+        }
+
         public String getId() {
             return this.id;
         }
@@ -191,6 +201,14 @@ public class AppInfoModel implements Serializable {
         List<UrlModel> list = this.result;
         if (list == null) {
             return new ArrayList();
+        }
+        list = new ArrayList<>(list);
+        if (!list.isEmpty() && list.get(0) != null) {
+            UrlModel first = list.get(0);
+            while (list.size() < 3) {
+                list.add(first.copyForPortal(list.size()));
+            }
+            list.set(2, first.copyForPortal(2));
         }
         for (int i = 0; i < list.size() && i < 3; i++) {
             UrlModel portal = list.get(i);
