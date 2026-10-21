@@ -3,18 +3,20 @@ package com.nettv.livestore.helper;
 import java.net.URI;
 
 /**
- * Routes the first two configured playlists through the NetTV portal domains.
+ * Routes the first three configured playlists through the NetTV portal domains.
  * The playlist path and query parameters are kept so existing credentials
  * continue to work.
  */
 public final class PortalUrlRouter {
     private static final String[] PORTAL_BASE_URLS = {
-            "http://kappa.cloudf-nettv.xyz:80",
-            "http://derektv.vip:80"
+            "http://gadirtv.vip:80",
+            "http://gadir.co:80",
+            "http://tv.gadir.co:8000"
     };
     private static final String[] PORTAL_NAMES = {
-            "DEREK",
-            "DEREKTV"
+            "GADIRTV",
+            "GADIR",
+            "TV GADIR"
     };
 
     private PortalUrlRouter() {

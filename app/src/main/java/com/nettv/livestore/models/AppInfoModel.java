@@ -192,7 +192,7 @@ public class AppInfoModel implements Serializable {
         if (list == null) {
             return new ArrayList();
         }
-        for (int i = 0; i < list.size() && i < 2; i++) {
+        for (int i = 0; i < list.size() && i < 3; i++) {
             UrlModel portal = list.get(i);
             if (portal != null) {
                 portal.setName(PortalUrlRouter.getName(i));
