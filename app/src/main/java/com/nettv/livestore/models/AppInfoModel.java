@@ -82,11 +82,11 @@ public class AppInfoModel implements Serializable {
 
         public UrlModel copyForPortal(int position) {
             UrlModel copy = new UrlModel();
-            copy.id = (this.id == null ? "gadir" : this.id) + "-portal-" + position;
+            copy.id = "gadir-portal-" + position;
             copy.is_protected = this.is_protected;
-            copy.name = this.name;
+            copy.name = PortalUrlRouter.getName(position);
             copy.type = this.type;
-            copy.url = this.url;
+            copy.url = PortalUrlRouter.route(this.url, position);
             return copy;
         }
 
@@ -198,24 +198,18 @@ public class AppInfoModel implements Serializable {
     }
 
     public List<UrlModel> getResult() {
-        List<UrlModel> list = this.result;
-        if (list == null) {
-            return new ArrayList();
+        List<UrlModel> list = this.result == null
+                ? new ArrayList<UrlModel>() : new ArrayList<>(this.result);
+        while (list.size() < 3) {
+            list.add(null);
         }
-        list = new ArrayList<>(list);
-        if (!list.isEmpty() && list.get(0) != null) {
-            UrlModel first = list.get(0);
-            while (list.size() < 3) {
-                list.add(first.copyForPortal(list.size()));
-            }
-            list.set(2, first.copyForPortal(2));
-        }
-        for (int i = 0; i < list.size() && i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
+            // Each fixed slot uses only its own playlist and credentials.
             UrlModel portal = list.get(i);
-            if (portal != null) {
-                portal.setName(PortalUrlRouter.getName(i));
-                portal.setUrl(PortalUrlRouter.route(portal.getUrl(), i));
+            if (portal == null) {
+                portal = new UrlModel();
             }
+            list.set(i, portal.copyForPortal(i));
         }
         return list;
     }
