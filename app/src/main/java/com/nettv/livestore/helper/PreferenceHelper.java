@@ -92,7 +92,8 @@ public class PreferenceHelper {
         try {
             String string = this.settings.getString(APP_INFO_MODEL, "");
             if (string != null && !string.isEmpty()) {
-                return (AppInfoModel) this.gson.fromJson(string, AppInfoModel.class);
+                return PortalCredentialStore.restore(this.settings,
+                        (AppInfoModel) this.gson.fromJson(string, AppInfoModel.class));
             }
         } catch (Exception unused) {
         }
@@ -564,6 +565,8 @@ public class PreferenceHelper {
     }
 
     public void setSharedPreferenceAppInfo(AppInfoModel appInfoModel) {
+        PortalCredentialStore.captureMissing(this.settings, getSharedPreferenceAppInfo());
+        PortalCredentialStore.restore(this.settings, appInfoModel);
         SharedPreferences.Editor editorEdit = this.settings.edit();
         editorEdit.putString(APP_INFO_MODEL, this.gson.toJson(appInfoModel));
         editorEdit.apply();

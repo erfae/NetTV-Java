@@ -133,11 +133,7 @@ public class GetSharedInfo {
     }
 
     public static String getPasswordFromUrl(String str) {
-        try {
-            return new URL(str.replaceAll(" ", "").trim()).getQuery().split("&")[1].split("=")[1];
-        } catch (Exception unused) {
-            return "";
-        }
+        return PortalCredentialStore.queryValue(str, "password");
     }
 
     public static int getPlaylistPosition(Context context) {
@@ -185,11 +181,7 @@ public class GetSharedInfo {
     }
 
     public static String getUsernameFromUrl(String str) {
-        try {
-            return new URL(str.replaceAll(" ", "").trim()).getQuery().split("&")[0].split("=")[1];
-        } catch (Exception unused) {
-            return "";
-        }
+        return PortalCredentialStore.queryValue(str, "username");
     }
 
     public static List<String> getVodSortLists(WordModels wordModels) {

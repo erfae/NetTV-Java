@@ -27,6 +27,7 @@ import com.nettv.livestore.apps.Constants;
 import com.nettv.livestore.dlg.SuccessDlg;
 import com.nettv.livestore.helper.GetSharedInfo;
 import com.nettv.livestore.helper.PreferenceHelper;
+import com.nettv.livestore.helper.PortalCredentialUi;
 import com.nettv.livestore.models.AppInfoModel;
 import com.nettv.livestore.models.WordModels;
 import com.nettv.livestore.remote.GetDataRequest;
@@ -102,6 +103,9 @@ public class AddPlaylistDlgFragment extends DialogFragment implements View.OnCli
                 this.username = this.et_username.getText().toString().trim();
                 this.playlistUrl = GetSharedInfo.getPlaylistUrl(this.playlistUrl, this.username, this.et_password.getText().toString().trim()).trim();
             }
+        }
+        if (PortalCredentialUi.saveFixed(this)) {
+            return;
         }
         String addData = Security.getAddData(this.sharedPreferenceHelper.getSharedPreferenceMacAddress().toLowerCase(), str, this.playlistName, this.playlistUrl, this.playlistType);
         GetDataRequest getDataRequest = new GetDataRequest(getContext(), 1000);
