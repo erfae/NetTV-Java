@@ -82,6 +82,7 @@ import com.nettv.livestore.apps.LTVApp;
 import com.nettv.livestore.dlgfragment.LiveSearchDlgFragment;
 import com.nettv.livestore.dlgfragment.LockDlgFragment;
 import com.nettv.livestore.helper.GetSharedInfo;
+import com.nettv.livestore.helper.PlaybackBuffer;
 import com.nettv.livestore.helper.PreferenceHelper;
 import com.nettv.livestore.helper.RealmController;
 import com.nettv.livestore.models.CatchUpEpg;
@@ -906,7 +907,7 @@ public class LiveChannelMobileActivity extends AppCompatActivity implements View
         MediaItem.Builder builder = new MediaItem.Builder();
         builder.setUri(Uri.parse(str)).setMediaMetadata(new MediaMetadata.Builder().setTitle("title").build()).setMimeType(adaptiveMimeTypeForContentType);
         MediaItem mediaItemBuild = builder.build();
-        ExoPlayer.Builder mediaSourceFactory = new ExoPlayer.Builder(this).setMediaSourceFactory(createMediaSourceFactory());
+        ExoPlayer.Builder mediaSourceFactory = new ExoPlayer.Builder(this).setMediaSourceFactory(createMediaSourceFactory()).setLoadControl(PlaybackBuffer.live());
         setRenderersFactory(mediaSourceFactory, true);
         ExoPlayer exoPlayerBuild = mediaSourceFactory.build();
         this.player = exoPlayerBuild;

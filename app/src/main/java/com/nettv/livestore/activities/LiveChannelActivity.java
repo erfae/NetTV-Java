@@ -79,6 +79,7 @@ import com.nettv.livestore.apps.LTVApp;
 import com.nettv.livestore.dlgfragment.LiveSearchDlgFragment;
 import com.nettv.livestore.dlgfragment.LockDlgFragment;
 import com.nettv.livestore.helper.GetSharedInfo;
+import com.nettv.livestore.helper.PlaybackBuffer;
 import com.nettv.livestore.helper.PreferenceHelper;
 import com.nettv.livestore.helper.RealmController;
 import com.nettv.livestore.models.CatchUpEpg;
@@ -1004,7 +1005,7 @@ public class LiveChannelActivity extends AppCompatActivity implements View.OnCli
         DefaultTrackSelector defaultTrackSelector = new DefaultTrackSelector(this);
         this.trackSelector = defaultTrackSelector;
         defaultTrackSelector.setParameters(this.trackSelectionParameters);
-        ExoPlayer.Builder trackSelector = new ExoPlayer.Builder(this).setMediaSourceFactory(createMediaSourceFactory()).setTrackSelector(this.trackSelector);
+        ExoPlayer.Builder trackSelector = new ExoPlayer.Builder(this).setMediaSourceFactory(createMediaSourceFactory()).setTrackSelector(this.trackSelector).setLoadControl(PlaybackBuffer.live());
         setRenderersFactory(trackSelector, true);
         ExoPlayer exoPlayerBuild = trackSelector.build();
         this.player = exoPlayerBuild;
